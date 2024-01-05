@@ -14,20 +14,20 @@ public class Player {
 
     public void selectChar(){
         GameChar[] charList = {new Samurai(), new Archer(),new Knight()};
-        System.out.println("-------------------");
-        System.out.println("---KARAKTERLER---");
-        System.out.println("-------------------");
+        System.out.println("-----------------");
+        System.out.println("   KARAKTERLER");
+        System.out.println("----------------------------------------------------------");
         for(GameChar gameChar : charList) {
             System.out.println("ID: "+ gameChar.getId() +" karakter: "+ gameChar.getName()  +
                     "\t Damage: "+ gameChar.getDamage() +
                     "\t Health: "+ gameChar.getHealth() +
                     "\t Money: "+ gameChar.getMoney());
         }
-        System.out.println("-------------------");
+        System.out.println("----------------------------------------------------------");
         System.out.println();
         System.out.print("Lütfen oynamak istediğiniz karakteri seçiniz : ");
-        System.out.println();
         int selectChar = input.nextInt();
+        System.out.println();
         switch (selectChar){
             case 1:
                 initPlayer(new Samurai());
@@ -41,11 +41,13 @@ public class Player {
             default:
                 initPlayer(new Samurai());
         }
-        System.out.println("Seçilen Karakter ==> ___" + this.getCharName() +
+        System.out.println("Seçilen Karakter : ___" + this.getCharName() +
                 "___ Damage: "+ this.getDamage() +
                 " Health: " + this.getHealth() +
                 " Money: " + this.getMoney());
     }
+
+
 
     public void initPlayer(GameChar gameChar){
         this.setDamage(gameChar.getDamage());
