@@ -17,6 +17,7 @@ public class Game {
         Location location = null;
 
         while(true){
+            player.printInfo();
             System.out.println();
             System.out.println("-----Bölgeler-----\n\n1 - Safe House ==> There is no enemy here. You are safe !!\n2 - Tool Store ==> You can buy armor and weapons here");
             System.out.println();
