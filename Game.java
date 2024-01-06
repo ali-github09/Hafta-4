@@ -5,6 +5,7 @@ public class Game {
 
     public void start(){
         System.out.println();
+
         System.out.println("Macera oyununa hoşgeldiniz ! ");
         System.out.println();
         System.out.print("Lütfen bir isim giriniz : ");
@@ -19,27 +20,38 @@ public class Game {
         while(true){
             player.printInfo();
             System.out.println();
-            System.out.println("-----Bölgeler-----\n\n1 - Safe House ==> There is no enemy here. You are safe !!\n2 - Tool Store ==> You can buy armor and weapons here");
+            System.out.println("-----Bölgeler-----");
             System.out.println();
+            System.out.println("1 - Safe House ==> There is no enemy here. You are safe !!");
+            System.out.println("2 - Tool Store ==> You can buy armor and weapons here");
+            System.out.println("3 - Çıkış yap");
             System.out.print("Lütfen gitmek istediğiniz bölgeyi seçiniz : ");
             System.out.println();
             int selectLoc = input.nextInt();
             switch (selectLoc){
+
                 case 1:
                     location = new SafeHouse(player);
                     break;
                 case 2:
                     location = new ToolStore(player);
                     break;
+                case 3:
+                    location = null;
+                    break;
                 default:
                     location = new SafeHouse(player);
             }
+            if(location == null){
+                System.out.println("Oyundan çıktınız. Tekrar görüşmek üzere.");
+                break;
+            }
+
             if(!location.onLocation()){
                 System.out.println("Game Over");
                 break;
             }
         }
-
     }
 
 }
