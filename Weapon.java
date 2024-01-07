@@ -1,13 +1,13 @@
 public class Weapon {
     private String name;
     private int Id;
-    private int hasar;
+    private int damage;
     private int price;
 
     public Weapon(String name,int id, int hasar, int price) {
         this.name = name;
         this.Id = id;
-        this.hasar = hasar;
+        this.damage = hasar;
         this.price = price;
     }
 
@@ -45,12 +45,12 @@ public class Weapon {
         Id = id;
     }
 
-    public int getHasar() {
-        return hasar;
+    public int getDamage() {
+        return damage;
     }
 
-    public void setHasar(int hasar) {
-        this.hasar = hasar;
+    public void setDamage(int damage) {
+        this.damage = damage;
     }
 
     public int getPrice() {
